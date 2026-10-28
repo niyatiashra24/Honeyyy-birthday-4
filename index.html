@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>For Honeyyy ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #f6a7c1;
+  --purple: #8b70c9;
+  --brown: #694633;
+  --cream: #fffdf3;
+  --rose: #fce3ec;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--brown);
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fffdfd;
+  background-image: repeating-linear-gradient(
+    90deg, #fffdfd 0, #fffdfd 34px,
+    #f8dce5 34px, #f8dce5 68px
+  );
+  overflow-x: hidden;
+}
+
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; }
+.hidden { display: none !important; }
+
+h1, h2, h3, .cute { font-family: 'Baloo 2', cursive; }
+h1, h2, p { margin-top: 0; }
+p { line-height: 1.8; }
+
+h1 {
+  color: var(--purple);
+  font-size: clamp(38px, 8vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: var(--purple);
+  font-size: clamp(29px, 6vw, 43px);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+section {
+  width: min(850px, 92%);
+  margin: 28px auto;
+}
+
+.center { text-align: center; }
+
+.small-label {
+  color: #9577c7;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.primary, .secondary {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 22px;
+  font-weight: 800;
+  transition: transform .2s;
+}
+
+.primary {
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 4px 0 #66509a;
+}
+
+.secondary {
+  background: #ffe1eb;
+  color: #7a4b67;
+  border: 1px solid #f2b9cc;
+}
+
+.primary:hover, .secondary:hover {
+  transform: translateY(-2px);
+}
+
+.primary:disabled { opacity: .7; cursor: default; }
+
+.paper {
+  background: rgba(255,253,243,.97);
+  border: 2px solid #e7d5b7;
+  border-radius: 24px;
+  box-shadow: 5px 7px 0 #e6d6ae;
+  padding: clamp(22px, 5vw, 35px);
+  position: relative;
+}
+
+.paper:before {
+  content: "✿";
+  color: #c3a6ed;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  font-size: 24px;
+}
+
+#lockScreen {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.lock-card {
+  width: min(430px, 100%);
+  text-align: center;
+  padding: 32px 22px;
+  background: var(--cream);
+  border: 3px dashed #c7b0ed;
+  border-radius: 28px;
+  box-shadow: 8px 8px 0 #e9d9a7;
+}
+
+.lock-icon { font-size: 58px; }
+.bow { color: #e58eaf; font-size: 35px; }
+
+.code-dots {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin: 20px 0;
+}
+
+.code-dot {
+  height: 17px;
+  width: 17px;
+  border: 2px solid #bba7dd;
+  border-radius: 50%;
+  background: white;
+}
+
+.code-dot.filled { background: var(--purple); }
+
+.keypad {
+  width: min(260px, 100%);
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.key {
+  border: 1px solid #e6d5ef;
+  background: #f0e6ff;
+  color: #6b548c;
+  border-radius: 15px;
+  padding: 13px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.key:hover { background: #ffdfeb; }
+#lockMessage { min-height: 25px; color: #b34f76; font-weight: 700; }
+
+#mainSite { padding-bottom: 45px; }
+
+.top-note {
+  width: fit-content;
+  max-width: 90%;
+  margin: 18px auto;
+  padding: 9px 18px;
+  border-radius: 99px;
+  background: #fffdf0;
+  border: 1px dashed #bfa9e8;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero { text-align: center; padding: 35px 16px; }
+
+.hero-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(255,253,243,.94);
+  border: 2px dashed #c6afe9;
+  border-radius: 32px;
+  padding: clamp(25px, 5vw, 40px) 20px;
+  box-shadow: 7px 8px 0 #ead9a9;
+}
+
+.floating-stickers {
+  font-size: 26px;
+  letter-spacing: 7px;
+  margin-bottom: 16px;
+}
+
+.hero-sub { max-width: 490px; margin: 0 auto 24px; }
+
+.section-heading { text-align: center; margin-bottom: 22px; }
+.section-heading p { margin-bottom: 0; }
+
+.question-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#questionReply {
+  color: var(--purple);
+  font-weight: 800;
+  min-height: 28px;
+  margin-top: 18px;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.sticker-card {
+  border: 2px solid #f0d8dc;
+  border-radius: 20px;
+  padding: 20px 12px;
+  background: #fffdf5;
+  min-width: 0;
+  box-shadow: 3px 4px 0 #eddfc5;
+  color: var(--brown);
+}
+
+.sticker-card:nth-child(even) { background: #f5efff; }
+.sticker-card .emoji { font-size: 38px; }
+.sticker-card h3 { color: var(--purple); margin: 9px 0 4px; font-size: 21px; }
+.sticker-card p { font-size: 12px; margin: 0; }
+
+.reveal {
+  display: none;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #795a85;
+}
+
+.sticker-card.open .reveal { display: block; }
+
+.envelopes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.envelope-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--brown);
+  min-width: 0;
+}
+
+.envelope {
+  position: relative;
+  height: 150px;
+  margin: 20px 0 12px;
+  border: 2px solid #d9a6bb;
+  border-radius: 8px;
+  background: #fffaf7;
+  box-shadow: 0 5px 0 #e9d3dc;
+  overflow: hidden;
+  transition: transform .25s;
+}
+
+.envelope-button:nth-child(2) .envelope {
+  background: #f8f2ff;
+  border-color: #bca4e4;
+  box-shadow: 0 5px 0 #e0d4f3;
+}
+
+.envelope-button:nth-child(3) .envelope {
+  background: #fff9dc;
+  border-color: #dfc979;
+  box-shadow: 0 5px 0 #f0e5b5;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, transparent 49.5%, #f4d6e2 50%);
+  opacity: .9;
+}
+
+.envelope-button:nth-child(2) .envelope::before {
+  background: linear-gradient(145deg, transparent 49.5%, #e6dcf7 50%);
+}
+
+.envelope-button:nth-child(3) .envelope::before {
+  background: linear-gradient(145deg, transparent 49.5%, #f5e9ad 50%);
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 72%;
+  background: linear-gradient(35deg, transparent 49.5%, #f8e3eb 50%);
+  opacity: .9;
+}
+
+.envelope-heart {
+  position: absolute;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  transition: .3s;
+}
+
+.envelope-title {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.envelope-message {
+  display: none;
+  margin-top: 12px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #ead6e0;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.envelope-button.open .envelope {
+  transform: translateY(-4px);
+}
+
+.envelope-button.open .envelope-heart {
+  transform: translate(-50%, -80%) rotate(-15deg) scale(1.2);
+}
+
+.envelope-button.open .envelope-message { display: block; }
+
+.letter-wrap {
+  max-width: 650px;
+  margin: auto;
+}
+
+.big-envelope {
+  width: min(390px, 100%);
+  margin: 25px auto 0;
+  border: 2px solid #d8a5b9;
+  border-radius: 18px;
+  padding: 25px 15px;
+  background: #fff0f5;
+  box-shadow: 5px 7px 0 #e8cfd9;
+  text-align: center;
+}
+
+.big-envelope-art { font-size: 90px; line-height: 1.2; }
+
+.letter-content {
+  display: none;
+  margin-top: 20px;
+  padding: clamp(20px, 5vw, 35px);
+  text-align: left;
+  background: #fffaf0;
+  border: 2px solid #dfcba9;
+  border-radius: 8px 24px 8px 24px;
+  box-shadow: 5px 7px 0 #e6d6ae;
+  animation: letterIn .45s ease;
+}
+
+.letter-content.open { display: block; }
+
+@keyframes letterIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-content p { line-height: 2; }
+.signature {
+  text-align: right;
+  color: var(--purple);
+  font-family: 'Baloo 2', cursive;
+  font-size: 27px;
+  margin-bottom: 0;
+}
+
+.hug-card {
+  background: #fff7fb;
+  border: 3px dashed #e9a5be;
+  border-radius: 30px;
+  padding: 28px 16px;
+  text-align: center;
+  box-shadow: 6px 7px 0 #f0d9e4;
+}
+
+.hug-caption {
+  color: #b66f99;
+  font-weight: 800;
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(25px, 5vw, 38px);
+  margin: 0;
+}
+
+.hug-scene {
+  width: min(300px, 100%);
+  margin: 10px auto;
+  animation: floaty 2.5s ease-in-out infinite;
+}
+
+.hug-scene svg { width: 100%; display: block; }
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.hug-heart {
+  animation: heartbeat 1.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.progress-track {
+  width: min(280px, 90%);
+  height: 14px;
+  background: white;
+  border: 2px solid #e3c4eb;
+  border-radius: 99px;
+  margin: 15px auto;
+  overflow: hidden;
+}
+
+#progressFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #f5a6c2, #b59ae9);
+  border-radius: 99px;
+  transition: width .1s linear;
+}
+
+#hugMessage { min-height: 30px; font-weight: 800; color: var(--purple); margin: 12px 0; }
+
+#confettiArea {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -35px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(600deg); opacity: .2; }
+}
+
+.music-panel {
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 25px;
+  border: 2px dashed #e9b4ca;
+  border-radius: 22px;
+  background: #fffaf5;
+  text-align: center;
+  box-shadow: 4px 5px 0 #eddbe5;
+}
+
+.music-panel audio {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px 12px;
+  font-size: 13px;
+  color: #8a6c9e;
+}
+
+@media(max-width:560px) {
+  .sticker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .envelopes { grid-template-columns: 1fr; gap: 8px; }
+  .envelope { max-width: 260px; margin: 12px auto; }
+  .envelope-button { width: 100%; }
+  .hero { padding: 22px 12px; }
+  .floating-stickers { letter-spacing: 3px; }
+}
+</style>
+</head>
+
+<body>
+<div id="confettiArea"></div>
+
+<!-- PASSWORD SCREEN: kept in the same style -->
+<div id="lockScreen">
+  <div class="lock-card">
+    <div class="lock-icon">💌</div>
+    <div class="small-label">a tiny diary, just for you</div>
+    <h1 style="font-size:43px;margin-top:12px">Hi, Honeyyy!</h1>
+    <p>This little scrapbook has a birthday surprise waiting for you ♡</p>
+    <div class="bow">୨୧</div>
+    <p><strong>Enter our special code</strong></p>
+
+    <div class="code-dots" id="codeDots">
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+      <span class="code-dot"></span>
+    </div>
+
+    <div class="keypad">
+      <button class="key" onclick="pressKey('1')">1</button>
+      <button class="key" onclick="pressKey('2')">2</button>
+      <button class="key" onclick="pressKey('3')">3</button>
+      <button class="key" onclick="pressKey('4')">4</button>
+      <button class="key" onclick="pressKey('5')">5</button>
+      <button class="key" onclick="pressKey('6')">6</button>
+      <button class="key" onclick="pressKey('7')">7</button>
+      <button class="key" onclick="pressKey('8')">8</button>
+      <button class="key" onclick="pressKey('9')">9</button>
+      <button class="key" onclick="clearCode()">⌫</button>
+      <button class="key" onclick="pressKey('0')">0</button>
+      <button class="key" onclick="unlockDiary()">♡</button>
+    </div>
+
+    <button class="primary" onclick="unlockDiary()">Unlock my diary ♡</button>
+    <p id="lockMessage" aria-live="polite"></p>
+    <div style="font-size:12px;color:#aa91bf">a little date with a lot of love ✿</div>
+  </div>
+</div>
+
+<main id="mainSite" class="hidden">
+  <div class="top-note">✿ handmade with love · a diary for Honeyyy ✿</div>
+
+  <!-- PAGE 1: WELCOME -->
+  <section id="page1" class="page">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="floating-stickers">🌷 ⭐ 🎀 💌 ⭐ 🌷</div>
+        <div class="small-label">the sweetest day of the year</div>
+        <h1>Happy Birthday,<br>Honeyyy!!</h1>
+        <p class="hero-sub">Today the stars have a little extra sparkle, the flowers are a little sweeter, and someone very special deserves all the love. ♡</p>
+        <div style="font-size:30px;margin-bottom:18px">🎂 🧸 💗 🎁</div>
+        <button class="primary" onclick="goToPage('page2')">Open Your Surprise ♡ ↓</button>
+      </div>
+    </header>
+  </section>
+
+  <!-- PAGE 2: YES / NO -->
+  <section id="page2" class="page hidden">
+    <div class="paper center">
+      <div style="font-size:36px">🎀</div>
+      <div class="small-label">important birthday question</div>
+      <h2>Ready for your little surprise?</h2>
+      <p>There are cute things, secret notes, and one very special hug waiting for you...</p>
+      <div class="question-buttons">
+        <button class="primary" onclick="yesAnswer()">YESSS! 💗</button>
+        <button class="secondary" id="noButton" onclick="noAnswer()">No 🙈</button>
+      </div>
+      <p id="questionReply" aria-live="polite"></p>
+      <div class="navigation">
+        <button class="secondary" onclick="goToPage('page1')">← Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: STICKERS -->
+  <section id="page3" class="page hidden">
+    <div class="section-heading">
+      <div class="small-label">little pieces of happy</div>
+      <h2>Open a tiny memory ♡</h2>
+      <p>Tap every sticker. Each one has a little note for you!</p>
+    </div>
+
+    <div class="sticker-grid">
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">📸</div><h3>Little moments</h3><p>tap to open ♡</p>
+        <div class="reveal">The smallest moments can become the sweetest memories. I hope we collect a million more. 📸</div>
+      </button>
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">💌</div><h3>Secret note</h3><p>tap to open ♡</p>
+        <div class="reveal">If I could wrap a feeling into a tiny letter, it would say: you matter to me more than these words can explain. 💗</div>
+      </button>
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">🎂</div><h3>Birthday wish</h3><p>tap to open ♡</p>
+        <div class="reveal">May this year bring you peaceful days, big smiles, exciting little adventures, and so many reasons to feel proud of yourself. 🎂</div>
+      </button>
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">🧸</div><h3>Comfort bear</h3><p>tap to open ♡</p>
+        <div class="reveal">A reminder that even on difficult days, you deserve kindness, comfort, and someone cheering you on. 🧸</div>
+      </button>
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">🌷</div><h3>For you</h3><p>tap to open ♡</p>
+        <div class="reveal">Like a flower growing at its own pace, I hope you keep becoming the person you want to be. 🌷</div>
+      </button>
+      <button class="sticker-card" onclick="toggleSticker(this)">
+        <div class="emoji">🎵</div><h3>Our soundtrack</h3><p>tap to open ♡</p>
+        <div class="reveal">Imagine a soft, happy song playing in the background while you read this little diary. This moment is yours. 🎵</div>
+      </button>
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="goToPage('page2')">← Back</button>
+      <button class="primary" onclick="goToPage('page4')">Open the envelopes 💌 →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 4: THREE MATCHING ENVELOPES -->
+  <section id="page4" class="page hidden">
+    <div class="section-heading">
+      <div class="small-label">sealed with a little love</div>
+      <h2>Three tiny envelopes 💌</h2>
+      <p>Tap each envelope to open its secret message.</p>
+    </div>
+
+    <div class="envelopes">
+      <button class="envelope-button" onclick="toggleEnvelope(this)" aria-expanded="false">
+        <div class="envelope"><span class="envelope-heart">❤️</span></div>
+        <div class="envelope-title">For your smile</div>
+        <div class="envelope-message">Never forget how much brightness a simple smile can bring to an ordinary day. Keep finding reasons to smile. ♡</div>
+      </button>
+
+      <button class="envelope-button" onclick="toggleEnvelope(this)" aria-expanded="false">
+        <div class="envelope"><span class="envelope-heart">❤️</span></div>
+        <div class="envelope-title">For your dreams</div>
+        <div class="envelope-message">I hope you stay curious, keep growing, and give your dreams a chance. You have so many lovely chapters ahead. ✨</div>
+      </button>
+
+      <button class="envelope-button" onclick="toggleEnvelope(this)" aria-expanded="false">
+        <div class="envelope"><span class="envelope-heart">❤️</span></div>
+        <div class="envelope-title">For your heart</div>
+        <div class="envelope-message">On busy days, remember to rest too. You do not have to be perfect to be wonderful. You are allowed to just be you. 🤍</div>
+      </button>
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="goToPage('page3')">← Back</button>
+      <button class="primary" onclick="goToPage('page5')">Open your letter ✉️ →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 5: LETTER IN AN ENVELOPE -->
+  <section id="page5" class="page hidden">
+    <div class="section-heading">
+      <div class="small-label">a little letter, just for you</div>
+      <h2>Something from my heart ♡</h2>
+      <p>Tap the heart seal to open your letter.</p>
+    </div>
+
+    <div class="letter-wrap center">
+      <button class="big-envelope" id="letterEnvelope" onclick="openLetter()" aria-expanded="false">
+        <div class="big-envelope-art">💌</div>
+        <h3 style="color:#8b70c9;margin:8px 0">A letter for my Honeyyy</h3>
+        <p style="margin:0">Sealed with love ♡</p>
+        <div style="font-size:28px;margin-top:12px">❤️</div>
+      </button>
+
+      <article class="letter-content" id="letterContent">
+        <h2 class="center">Happy Birthday, my Honeyyy! 💗</h2>
+        <p>I wanted to make you something a little different this year, something you could open and explore, with tiny surprises hiding in every corner. So here is my little scrapbook, made especially for you.</p>
+        <p>I hope this new year of your life gives you reasons to laugh until your cheeks hurt, moments that make you feel proud, people who understand you, and days that feel warm even when life gets busy.</p>
+        <p>Thank you for being someone worth celebrating. I hope you never forget that your happiness matters, your dreams matter, and you deserve the same kindness you give to others.</p>
+        <p>So today, eat something yummy, make a wish, enjoy your special day, and let yourself be celebrated. This tiny diary is a reminder that someone is wishing lovely things for you. 🎂🌷</p>
+        <p>One more birthday wish, one more little smile, and one very big virtual hug are waiting below...</p>
+        <p class="signature">Yours, Your Madam ♡</p>
+      </article>
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="goToPage('page4')">← Back</button>
+      <button class="primary" onclick="goToPage('page6')">One last surprise 🧸 →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 6: BEAR HUG -->
+  <section id="page6" class="page hidden">
+    <div class="hug-card">
+      <div class="small-label">your final little surprise</div>
+      <h2>A little bear hug for you!</h2>
+      <p>Sending you the warmest birthday hug, wrapped in love and tiny hearts. 🤍</p>
+
+      <div class="hug-scene">
+        <svg viewBox="0 0 300 245" role="img" aria-label="Two cute bears hugging">
+          <g fill="#f29fba">
+            <path class="hug-heart" d="M66 43 C52 28 36 48 66 67 C96 48 80 28 66 43Z"/>
+            <path class="hug-heart" d="M231 49 C217 34 201 54 231 73 C261 54 245 34 231 49Z"/>
+            <path class="hug-heart" d="M151 22 C137 7 121 27 151 46 C181 27 165 7 151 22Z"/>
+          </g>
+          <g stroke="#75503e" stroke-width="4" stroke-linejoin="round">
+            <circle cx="111" cy="88" r="29" fill="#d9a16d"/>
+            <circle cx="89" cy="66" r="12" fill="#d9a16d"/>
+            <circle cx="133" cy="66" r="12" fill="#d9a16d"/>
+            <circle cx="89" cy="66" r="5" fill="#f4c5b2" stroke="none"/>
+            <circle cx="133" cy="66" r="5" fill="#f4c5b2" stroke="none"/>
+            <ellipse cx="111" cy="155" rx="39" ry="46" fill="#d9a16d"/>
+            <ellipse cx="111" cy="102" rx="17" ry="12" fill="#f8dfc9" stroke="none"/>
+            <circle cx="102" cy="86" r="3" fill="#50362b" stroke="none"/>
+            <circle cx="120" cy="86" r="3" fill="#50362b" stroke="none"/>
+            <ellipse cx="111" cy="98" rx="5" ry="4" fill="#50362b" stroke="none"/>
+            <path d="M102 108 Q111 115 120 108" fill="none" stroke-width="2.5"/>
+          </g>
+          <g stroke="#75503e" stroke-width="4" stroke-linejoin="round">
+            <circle cx="188" cy="91" r="29" fill="#fffaf0"/>
+            <circle cx="166" cy="69" r="12" fill="#fffaf0"/>
+            <circle cx="210" cy="69" r="12" fill="#fffaf0"/>
+            <circle cx="166" cy="69" r="5" fill="#f4c5d0" stroke="none"/>
+            <circle cx="210" cy="69" r="5" fill="#f4c5d0" stroke="none"/>
+            <ellipse cx="188" cy="157" rx="39" ry="46" fill="#fffaf0"/>
+            <ellipse cx="188" cy="105" rx="17" ry="12" fill="#f8dfdf" stroke="none"/>
+            <circle cx="179" cy="89" r="3" fill="#50362b" stroke="none"/>
+            <circle cx="197" cy="89" r="3" fill="#50362b" stroke="none"/>
+            <ellipse cx="188" cy="101" rx="5" ry="4" fill="#50362b" stroke="none"/>
+            <path d="M179 111 Q188 118 197 111" fill="none" stroke-width="2.5"/>
+          </g>
+          <path d="M128 139 Q151 123 173 143" fill="none" stroke="#d9a16d" stroke-width="18" stroke-linecap="round"/>
+          <path d="M174 151 Q151 166 131 151" fill="none" stroke="#fffaf0" stroke-width="18" stroke-linecap="round"/>
+          <path d="M128 139 Q151 123 173 143" fill="none" stroke="#75503e" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M174 151 Q151 166 131 151" fill="none" stroke="#75503e" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="150" cy="210" rx="78" ry="9" fill="#f3dce5"/>
+          <text x="150" y="235" text-anchor="middle" font-size="16" fill="#b66f99" font-family="Quicksand, sans-serif">squishy bear hugs ♡</text>
+        </svg>
+      </div>
+
+      <p class="hug-caption" id="hugCaption">Ready for your hug? 🧸</p>
+      <div class="progress-track"><div id="progressFill"></div></div>
+      <p id="hugMessage" aria-live="polite">Press the button to receive your birthday hug! 💗</p>
+      <button class="primary" id="hugButton" onclick="sendHug()">Send me a hug! ♡</button>
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="goToPage('page5')">← Back</button>
+      <button class="primary" onclick="goToPage('page7')">Play our song 🎵 →</button>
+    </div>
+  </section>
+
+  <!-- PAGE 7: SONG AT THE END -->
+  <section id="page7" class="page hidden">
+    <div class="music-panel">
+      <div style="font-size:45px">🎵💗🎀</div>
+      <div class="small-label">one last little thing</div>
+      <h2>Your Special Song</h2>
+      <p>Press play, relax, and enjoy this little moment together. ♡</p>
+
+      <audio id="music" controls loop preload="metadata">
+        <source src="./birthday-song.mp3.mpeg" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+
+      <p style="font-size:13px;margin-top:15px">If it doesn't start automatically, tap the play button above. ♡</p>
+      <p id="musicStatus" aria-live="polite"></p>
+    </div>
+
+    <div class="navigation">
+      <button class="secondary" onclick="goToPage('page6')">← Back to your hug</button>
+      <button class="primary" onclick="confetti(45)">More birthday sparkles ✨</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    Made with tiny stickers, birthday wishes & lots of love ♡<br>
+    <span style="font-size:22px">🎀 🌷 🧸 💌 🌷 🎀</span>
+  </div>
+</main>
+
+<script>
+const SECRET_CODE = "2412";
+let enteredCode = "";
+let hugTimer = null;
+let hugProgress = 0;
+
+function updateDots() {
+  document.querySelectorAll(".code-dot").forEach((dot, index) => {
+    dot.classList.toggle("filled", index < enteredCode.length);
+  });
+}
+
+function pressKey(number) {
+  if (enteredCode.length >= 4) return;
+  enteredCode += number;
+  updateDots();
+  document.getElementById("lockMessage").textContent = "";
+  if (enteredCode.length === 4) setTimeout(unlockDiary, 180);
+}
+
+function clearCode() {
+  enteredCode = "";
+  updateDots();
+  document.getElementById("lockMessage").textContent = "";
+}
+
+function unlockDiary() {
+  if (enteredCode === SECRET_CODE) {
+    document.getElementById("lockScreen").classList.add("hidden");
+    document.getElementById("mainSite").classList.remove("hidden");
+    goToPage("page1", false);
+    confetti(22);
+  } else {
+    document.getElementById("lockMessage").textContent = "Oopsie! Try again, Honeyyy ♡";
+    enteredCode = "";
+    updateDots();
+  }
+}
+
+function goToPage(pageId, shouldScroll = true) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.add("hidden");
+  });
+
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.remove("hidden");
+    if (shouldScroll) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }
+}
+
+function yesAnswer() {
+  document.getElementById("questionReply").textContent =
+    "YAYYY! Your little scrapbook is waiting for you! 🎀💗";
+  confetti(25);
+  setTimeout(() => goToPage("page3"), 700);
+}
+
+let noCount = 0;
+function noAnswer() {
+  const messages = [
+    "Hehe, are you sureee? 🥺",
+    "But I put cute stickers in here! 🎀",
+    "One tiny surprise? Pretty please? 💗",
+    "Okay okay... the hug is still waiting! 🧸"
+  ];
+  document.getElementById("questionReply").textContent =
+    messages[noCount % messages.length];
+  noCount++;
+}
+
+function toggleSticker(card) {
+  card.classList.toggle("open");
+}
+
+function toggleEnvelope(envelopeButton) {
+  envelopeButton.classList.toggle("open");
+  envelopeButton.setAttribute(
+    "aria-expanded",
+    envelopeButton.classList.contains("open") ? "true" : "false"
+  );
+}
+
+function openLetter() {
+  const letter = document.getElementById("letterContent");
+  const envelope = document.getElementById("letterEnvelope");
+  const isOpen = letter.classList.toggle("open");
+  envelope.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  envelope.querySelector(".big-envelope-art").textContent = isOpen ? "💌✨" : "💌";
+  if (isOpen) {
+    setTimeout(() => letter.scrollIntoView({ behavior: "smooth", block: "nearest" }), 100);
+  }
+}
+
+function confetti(amount = 30) {
+  const area = document.getElementById("confettiArea");
+  const pieces = ["💗", "♡", "⭐", "🌷", "🎀", "✨"];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement("span");
+    piece.className = "confetti-piece";
+    piece.textContent = pieces[Math.floor(Math.random() * pieces.length)];
+    piece.style.left = Math.random() * 100 + "%";
+    piece.style.animationDelay = Math.random() * 1.2 + "s";
+    piece.style.animationDuration = (2 + Math.random() * 2) + "s";
+    piece.style.fontSize = (15 + Math.random() * 18) + "px";
+    area.appendChild(piece);
+    setTimeout(() => piece.remove(), 5000);
+  }
+}
+
+function sendHug() {
+  if (hugTimer) return;
+
+  const button = document.getElementById("hugButton");
+  const fill = document.getElementById("progressFill");
+  const message = document.getElementById("hugMessage");
+  const caption = document.getElementById("hugCaption");
+
+  button.disabled = true;
+  button.textContent = "Sending a warm hug... ♡";
+  caption.textContent = "Hug incoming! 🧸💗";
+  message.textContent = "Wrapping your hug in love... 💌";
+  hugProgress = 0;
+  fill.style.width = "0%";
+
+  hugTimer = setInterval(() => {
+    hugProgress += 2;
+    fill.style.width = hugProgress + "%";
+
+    if (hugProgress >= 100) {
+      clearInterval(hugTimer);
+      hugTimer = null;
+      message.textContent = "HUG DELIVERED! You are loved so much! 🤍";
+      caption.textContent = "Big squishy hug delivered! ♡";
+      button.disabled = false;
+      button.textContent = "Send another hug! 💗";
+      button.onclick = resetHug;
+      confetti(45);
+    }
+  }, 55);
+}
+
+function resetHug() {
+  document.getElementById("hugCaption").textContent = "Ready for your hug? 🧸";
+  document.getElementById("hugMessage").textContent =
+    "Press the button to receive your birthday hug! 💗";
+  document.getElementById("hugButton").onclick = sendHug;
+  document.getElementById("progressFill").style.width = "0%";
+  sendHug();
+}
+
+const music = document.getElementById("music");
+if (music) {
+  music.addEventListener("error", () => {
+    document.getElementById("musicStatus").textContent =
+      "The song file could not be loaded. Check the filename and make sure it is beside index.html.";
+  });
+  music.addEventListener("canplay", () => {
+    document.getElementById("musicStatus").textContent = "";
+  });
+}
+</script>
+</body>
+</html>
